@@ -23,10 +23,12 @@ public function login()
         if ($username == $dataUser['username']) {
             if (md5($password) == $dataUser['password']) {
                 session()->set([
-                    'username' => $dataUser['username'],
-                    'role' => $dataUser['role'],
-                    'isLoggedIn' => TRUE
-                ]);
+    'username' => $dataUser['username'],
+    'role' => $dataUser['role'],
+    'email' => 'april@gmail.com',
+    'login_time' => date('Y-m-d H:i:s'),
+    'isLoggedIn' => TRUE
+]);
 
                 return redirect()->to(base_url('/'));
             } else {
